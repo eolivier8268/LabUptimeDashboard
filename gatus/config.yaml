@@ -1,0 +1,280 @@
+
+endpoints:
+  - name: Uptime Server - Kuma
+    group: core
+    url: "http://10.200.1.3:3001"
+    interval: 60s
+    conditions:
+      - "[STATUS] == 200"
+
+  - name: Uptime Server - Homepage
+    group: core
+    url: "http://10.200.1.3:3000"
+    interval: 60s
+    conditions:
+      - "[STATUS] == 200"
+
+  - name: Uptime Server - Gatus
+    group: core
+    url: "http://10.200.1.3:3002"
+    interval: 60s
+    conditions:
+      - "[STATUS] == 200"
+
+  - name: ESXI Server
+    group: core
+    url: "https://10.200.1.10:443"
+    client:
+      insecure: true
+    interval: 60s
+    conditions:
+      - "[STATUS] == 200"
+
+  - name: TrueNAS Admin Webpage
+    group: core
+    url: "https://10.200.1.11"
+    client:
+      insecure: true # disables SSL verfication
+    interval: 60s
+    conditions:
+      - "[STATUS] == 200"
+
+  - name: TrueNAS SMB Shares
+    group: core
+    url: "tcp://10.200.1.11:445"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+
+  - name: Proxmox
+    group: core
+    url: "icmp://10.200.1.15"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+
+  - name: Proxmox (ILO)
+    group: core
+    url: "icmp://10.200.1.20"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+
+  - name: CTRE
+    group: core
+    url: "icmp://10.200.1.16"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+
+  - name: Extra Dev Box
+    group: core
+    url: "tcp://10.200.1.18:22"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+
+  - name: Emile's File Server
+    group: core
+    url: "tcp://10.200.1.19:22"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+
+  - name: Jump Box SSH
+    group: core
+    url: "tcp://10.200.1.35:22"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+  - name: Jump Box 1-1
+    group: core
+    url: "tcp://10.200.1.35:5901"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+  - name: Jump Box 1-2
+    group: core
+    url: "tcp://10.200.1.35:5902"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+  - name: Jump Box 1-3
+    group: core
+    url: "tcp://10.200.1.35:5903"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+  - name: Jump Box 1-4
+    group: core
+    url: "tcp://10.200.1.35:5904"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+  - name: Jump Box 1-5
+    group: core
+    url: "tcp://10.200.1.35:5905"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+  - name: Jump Box 1-6
+    group: core
+    url: "tcp://10.200.1.35:5906"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+
+  - name: Jump Box 2
+    group: core
+    url: "icmp://10.200.1.36"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+
+  - name: Jump Box 3
+    group: core
+    url: "icmp://10.200.1.37"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+
+  - name: Tryouts c01
+    group: challs
+    url: "icmp://10.200.1.101"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+
+  - name: Tryouts c02
+    group: challs
+    url: "icmp://10.200.1.102"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+
+  - name: Tryouts c03
+    group: challs
+    url: "tcp://10.200.1.103:4212"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+
+  - name: Tryouts c04
+    group: challs
+    url: "http://10.200.1.104:8084"
+    interval: 60s
+    conditions:
+      - "[STATUS] == 200"
+
+  - name: Tryouts c05
+    group: challs
+    url: "http://10.200.1.104:8085"
+    interval: 60s
+    conditions:
+      - "[STATUS] == 200"
+
+  - name: Tryouts c06
+    group: challs
+    url: "http://10.200.1.104:8086"
+    interval: 60s
+    conditions:
+      - "[STATUS] == 200"
+
+  - name: Tryouts c07
+    group: challs
+    url: "http://10.200.1.104:8087"
+    interval: 60s
+    conditions:
+      - "[STATUS] == 200"
+
+  - name: Tryouts c08
+    group: challs
+    url: "http://10.200.1.104:8088"
+    interval: 60s
+    conditions:
+      - "[STATUS] == 200"
+
+  - name: Tryouts c09
+    group: challs
+    url: "http://10.200.1.104:8089"
+    interval: 60s
+    conditions:
+      - "[STATUS] == 200"
+
+  - name: Tryouts c10
+    group: challs
+    url: "http://10.200.1.104:8090"
+    interval: 60s
+    conditions:
+      - "[STATUS] == 200"
+
+  - name: Tryouts c15
+    group: challs
+    url: "tcp://10.200.1.106:1337"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+
+  - name: Tryouts c16
+    group: challs
+    url: "icmp://10.200.1.105"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+
+  - name: Tryouts c17
+    group: challs
+    url: "http://10.200.1.106:80"
+    interval: 60s
+    conditions:
+      - "[STATUS] == 200"
+
+
+  - name: Dev Workstation
+    group: Capstone
+    url: "tcp://10.200.1.12:5900"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+
+  - name: Clickhouse DB
+    group: Capstone
+    url: "http://10.200.1.13:8123"
+    interval: 60s
+    conditions:
+      - "[STATUS] == 200"
+
+  - name: GitLab Server
+    group: Capstone
+    url: "http://10.200.1.14:80"
+    interval: 60s
+    conditions:
+      - "[STATUS] == 200"
+
+  - name: Shadow's Edge
+    group: Capstone
+    url: "icmp://10.200.1.107"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+
+  - name: HTTP
+    group: CCDC
+    url: "http://10.200.1.30:80"
+    interval: 60s
+    conditions:
+      - "[STATUS] == 200"
+
+  - name: SMTP
+    group: CCDC
+    url: "tcp://10.200.1.30:25"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+
+  - name: DNS
+    group: CCDC
+    url: "udp://10.200.1.30:53"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
