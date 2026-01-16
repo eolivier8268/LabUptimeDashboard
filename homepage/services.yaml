@@ -13,15 +13,18 @@
             - type: customapi
               url: http://10.200.1.3:3002/api/v1/endpoints/statuses
               mappings:
-                - field: "37.results.49.success"
+                - field: "$[0]"
+                #- field: "$[?(@.key=='core_uptime-server---homepage')]"
+                #- field: 59
+                #- field: "59.results.0.success"
                   label: "Homepage (:3000)"
                   format: bytes
-                  remap:
-                    - value: true
-                      to: Online
-                    - value: false
-                      to: Offline
-                - field: "38.results.49.success"
+                #  remap:
+                #    - value: true
+                #      to: Online
+                #    - value: false
+                #      to: Offline
+                - field: "58.results.49.success"
                   label: "Uptime Kuma (:3001)"
                   format: bytes
                   remap:
@@ -29,7 +32,7 @@
                       to: Online
                     - value: false
                       to: Offline
-                - field: "36.results.49.success"
+                - field: "56.results.49.success"
                   label: "Gatus (:3002)"
                   format: bytes
                   remap:
@@ -46,7 +49,7 @@
             - type: customapi
               url: http://10.200.1.3:3002/api/v1/endpoints/statuses
               mappings:
-                - field: "21.results.49.success"
+                - field: "29.results.49.success"
                   label: "Webpage (:443)"
                   format: bytes
                   remap:
@@ -64,7 +67,7 @@
             - type: customapi
               url: http://10.200.1.3:3002/api/v1/endpoints/statuses
               mappings:
-                - field: "34.results.49.success"
+                - field: "54.results.49.success"
                   label: "Webpage (:443)"
                   format: bytes
                   remap:
@@ -72,7 +75,7 @@
                       to: Online
                     - value: false
                       to: Offline
-                - field: "35.results.49.success"
+                - field: "55.results.49.success"
                   label: "SMB Shares (:445)"
                   format: bytes
                   remap:
@@ -110,7 +113,7 @@
             - type: customapi
               url: http://10.200.1.3:3002/api/v1/endpoints/statuses
               mappings:
-                - field: "22.results.49.success"
+                - field: "5.results.49.success"
                   label: "SSH (:22)"
                   format: bytes
                   remap:
@@ -128,7 +131,7 @@
             - type: customapi
               url: http://10.200.1.3:3002/api/v1/endpoints/statuses
               mappings:
-                - field: "20.results.49.success"
+                - field: "28.results.49.success"
                   label: "SSH (:22)"
                   format: bytes
                   remap:
@@ -141,14 +144,213 @@
         icon: microsoft-remote-desktop
         description: "10.200.1.35"
         ping: 10.200.1.35
+        widgets:
+            - type: customapi
+              url: http://10.200.1.3:3002/api/v1/endpoints/statuses
+              mappings:
+                - field: "37.results.49.success"
+                  label: "SSH (:22)"
+                  format: bytes
+                  remap:
+                    - value: true
+                      to: Online
+                    - value: false
+                      to: Offline
+            - type: customapi
+              url: http://10.200.1.3:3002/api/v1/endpoints/statuses
+              mappings:
+                - field: "38.results.49.success"
+                  label: "User 1 (:5901)"
+                  format: bytes
+                  remap:
+                    - value: true
+                      to: Online
+                    - value: false
+                      to: Offline
+                - field: "39.results.49.success"
+                  label: "User 2 (:5902)"
+                  format: bytes
+                  remap:
+                    - value: true
+                      to: Online
+                    - value: false
+                      to: Offline
+                - field: "40.results.49.success"
+                  label: "User 3 (:5903)"
+                  format: bytes
+                  remap:
+                    - value: true
+                      to: Online
+                    - value: false
+                      to: Offline
+            - type: customapi
+              url: http://10.200.1.3:3002/api/v1/endpoints/statuses
+              mappings:
+                - field: "41.results.49.success"
+                  label: "User 4 (:5904)"
+                  format: bytes
+                  remap:
+                    - value: true
+                      to: Online
+                    - value: false
+                      to: Offline
+                - field: "42.results.49.success"
+                  label: "User 5 (:5905)"
+                  format: bytes
+                  remap:
+                    - value: true
+                      to: Online
+                    - value: false
+                      to: Offline
+                - field: "43.results.49.success"
+                  label: "User 6 (:5906)"
+                  format: bytes
+                  remap:
+                    - value: true
+                      to: Online
+                    - value: false
+                      to: Offline
     - Jump Box 2:
         icon: microsoft-remote-desktop
         description: "10.200.1.36"
         ping: 10.200.1.36
+        widgets:
+            - type: customapi
+              url: http://10.200.1.3:3002/api/v1/endpoints/statuses
+              mappings:
+                - field: "44.results.49.success"
+                  label: "SSH (:22)"
+                  format: bytes
+                  remap:
+                    - value: true
+                      to: Online
+                    - value: false
+                      to: Offline
+            - type: customapi
+              url: http://10.200.1.3:3002/api/v1/endpoints/statuses
+              mappings:
+                - field: "38.results.49.success"
+                  label: "User 1 (:5901)"
+                  format: bytes
+                  remap:
+                    - value: true
+                      to: Online
+                    - value: false
+                      to: Offline
+                - field: "39.results.49.success"
+                  label: "User 2 (:5902)"
+                  format: bytes
+                  remap:
+                    - value: true
+                      to: Online
+                    - value: false
+                      to: Offline
+                - field: "40.results.49.success"
+                  label: "User 3 (:5903)"
+                  format: bytes
+                  remap:
+                    - value: true
+                      to: Online
+                    - value: false
+                      to: Offline
+            - type: customapi
+              url: http://10.200.1.3:3002/api/v1/endpoints/statuses
+              mappings:
+                - field: "41.results.49.success"
+                  label: "User 4 (:5904)"
+                  format: bytes
+                  remap:
+                    - value: true
+                      to: Online
+                    - value: false
+                      to: Offline
+                - field: "42.results.49.success"
+                  label: "User 5 (:5905)"
+                  format: bytes
+                  remap:
+                    - value: true
+                      to: Online
+                    - value: false
+                      to: Offline
+                - field: "43.results.49.success"
+                  label: "User 6 (:5906)"
+                  format: bytes
+                  remap:
+                    - value: true
+                      to: Online
+                    - value: false
+                      to: Offline
     - Jump Box 3:
         icon: microsoft-remote-desktop
         description: "10.200.1.37"
         ping: 10.200.1.37
+        widgets:
+            - type: customapi
+              url: http://10.200.1.3:3002/api/v1/endpoints/statuses
+              mappings:
+                - field: "51.results.49.success"
+                  label: "SSH (:22)"
+                  format: bytes
+                  remap:
+                    - value: true
+                      to: Online
+                    - value: false
+                      to: Offline
+            - type: customapi
+              url: http://10.200.1.3:3002/api/v1/endpoints/statuses
+              mappings:
+                - field: "45.results.49.success"
+                  label: "User 1 (:5901)"
+                  format: bytes
+                  remap:
+                    - value: true
+                      to: Online
+                    - value: false
+                      to: Offline
+                - field: "46.results.49.success"
+                  label: "User 2 (:5902)"
+                  format: bytes
+                  remap:
+                    - value: true
+                      to: Online
+                    - value: false
+                      to: Offline
+                - field: "47.results.49.success"
+                  label: "User 3 (:5903)"
+                  format: bytes
+                  remap:
+                    - value: true
+                      to: Online
+                    - value: false
+                      to: Offline
+            - type: customapi
+              url: http://10.200.1.3:3002/api/v1/endpoints/statuses
+              mappings:
+                - field: "48.results.49.success"
+                  label: "User 4 (:5904)"
+                  format: bytes
+                  remap:
+                    - value: true
+                      to: Online
+                    - value: false
+                      to: Offline
+                - field: "49.results.49.success"
+                  label: "User 5 (:5905)"
+                  format: bytes
+                  remap:
+                    - value: true
+                      to: Online
+                    - value: false
+                      to: Offline
+                - field: "50.results.49.success"
+                  label: "User 6 (:5906)"
+                  format: bytes
+                  remap:
+                    - value: true
+                      to: Online
+                    - value: false
+                      to: Offline
+
 
 - Challenges and Labs:
     - "Tryouts c1":
@@ -163,18 +365,66 @@
         icon: terminal
         description: 10.200.1.103
         ping: 10.200.1.103
+        widgets:
+            - type: customapi
+              url: http://10.200.1.3:3002/api/v1/endpoints/statuses
+              mappings:
+                - field: "16.results.49.success"
+                  label: "tcp/4212"
+                  format: bytes
+                  remap:
+                    - value: true
+                      to: Online
+                    - value: false
+                      to: Offline
+
     - "Tryouts c4-c10":
         icon: nodejs
         description: 10.200.1.104
         ping: 10.200.1.104
+        widgets:
+            - type: customapi
+              url: http://10.200.1.3:3002/api/v1/endpoints/statuses
+              mappings:
+                - field: "17.results.49.success"
+                  label: "http-c04 (:8084)"
+                  format: bytes
+                  remap:
+                    - value: true
+                      to: Online
+                    - value: f
+                      to: Offline
+
     - "Tryouts c16":
         icon: terminal
         description: 10.200.1.105
         ping: 10.200.1.105
+
     - "Tryouts c15, c17":
         icon: terminal
         description: 10.200.1.106
         ping: 10.200.1.106
+        widgets:
+            - type: customapi
+              url: http://10.200.1.3:3002/api/v1/endpoints/statuses
+              mappings:
+                - field: "24.results.49.success"
+                  label: "c15-welcome (:1337)"
+                  format: bytes
+                  remap:
+                    - value: true
+                      to: Online
+                    - value: f
+                      to: Offline
+                - field: "26.results.49.success"
+                  label: "c17-nextjs (:80)"
+                  format: bytes
+                  remap:
+                    - value: true
+                      to: Online
+                    - value: f
+                      to: Offline
+
 
 - Capstone:
     - Dev Workstation:
@@ -195,10 +445,70 @@
     - Clickhouse DB:
         description: 10.200.1.13
         ping: 10.200.1.13
+        href: http://10.200.1.13:8123
+        widgets:
+            - type: customapi
+              url: http://10.200.1.3:3002/api/v1/endpoints/statuses
+              mappings:
+                - field: "3.results.49.success"
+                  label: "SSH (:22)"
+                  format: bytes
+                  remap:
+                    - value: true
+                      to: Online
+                    - value: false
+                      to: Offline
+                - field: "4.results.49.success"
+                  label: "Web (:8123)"
+                  format: bytes
+                  remap:
+                    - value: true
+                      to: Online
+                    - value: false
+                      to: Offline
+                - field: "1.results.49.success"
+                  label: "Clickhouse (:9000)"
+                  format: bytes
+                  remap:
+                    - value: true
+                      to: Online
+                    - value: false
+                      to: Offline
+                - field: "0.results.49.success"
+                  label: "Replication (:9009)"
+                  format: bytes
+                  remap:
+                    - value: true
+                      to: Online
+                    - value: false
+                      to: Offline
+
     - Gitlab Server:
         icon: git
         description: 10.200.1.14
         ping: 10.200.1.14
+        href: http://10.200.1.14/
+        widgets:
+            - type: customapi
+              url: http://10.200.1.3:3002/api/v1/endpoints/statuses
+              mappings:
+                - field: "6.results.49.success"
+                  label: "SSH (:22)"
+                  format: bytes
+                  remap:
+                    - value: true
+                      to: Online
+                    - value: false
+                      to: Offline
+                - field: "6.results.49.success"
+                  label: "Webpage (:80)"
+                  format: bytes
+                  remap:
+                    - value: true
+                      to: Online
+                    - value: false
+                      to: Offline
+
     - Shadow's Edge:
         description: 10.200.1.107
         ping: 10.200.1.107
@@ -207,8 +517,52 @@
     - Practice Pod "Public IP":
         icon: opnsense
         description: 10.200.1.30
-        ping: 10.200.1.30
+        widgets:
+            - type: customapi
+              url: http://10.200.1.3:3002/api/v1/endpoints/statuses
+              mappings:
+                - field: "13.results.49.success"
+                  label: "SSH (tcp/22)"
+                  format: bytes
+                  remap:
+                    - value: true
+                      to: Online
+                    - value: false
+                      to: Offline
+                - field: "12.results.49.success"
+                  label: "SMTP (tcp/25)"
+                  format: bytes
+                  remap:
+                    - value: true
+                      to: Online
+                    - value: false
+                      to: Offline
+                - field: "9.results.49.success"
+                  label: "DNS (udp/53)"
+                  format: bytes
+                  remap:
+                    - value: true
+                      to: Online
+                    - value: false
+                      to: Offline
+                - field: "11.results.49.success"
+                  label: "HTTP (tcp/80)"
+                  format: bytes
+                  remap:
+                    - value: true
+                      to: Online
+                    - value: false
+                      to: Offline
+                - field: "10.results.49.success"
+                  label: "Git (tcp/3000)"
+                  format: bytes
+                  remap:
+                    - value: true
+                      to: Online
+                    - value: false
+                      to: Offline
+
+
     - PA Firewall :
         icon: palo-alto
         description: 10.200.1.21
-        ping: 10.200.1.21

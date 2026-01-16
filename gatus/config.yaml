@@ -1,5 +1,15 @@
 
 endpoints:
+##########################################
+### General
+##########################################
+  - name: Cisco Switch
+    group: core
+    url: "icmp://10.200.1.2"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+
   - name: Uptime Server - Kuma
     group: core
     url: "http://10.200.1.3:3001"
@@ -74,70 +84,23 @@ endpoints:
     conditions:
       - "[CONNECTED] == true"
 
-  - name: Emile's File Server
+  - name: Emile's File Server SSH
     group: core
     url: "tcp://10.200.1.19:22"
     interval: 60s
     conditions:
       - "[CONNECTED] == true"
-
-  - name: Jump Box SSH
+  - name: Emile's File Server Syncthing
     group: core
-    url: "tcp://10.200.1.35:22"
-    interval: 60s
-    conditions:
-      - "[CONNECTED] == true"
-  - name: Jump Box 1-1
-    group: core
-    url: "tcp://10.200.1.35:5901"
-    interval: 60s
-    conditions:
-      - "[CONNECTED] == true"
-  - name: Jump Box 1-2
-    group: core
-    url: "tcp://10.200.1.35:5902"
-    interval: 60s
-    conditions:
-      - "[CONNECTED] == true"
-  - name: Jump Box 1-3
-    group: core
-    url: "tcp://10.200.1.35:5903"
-    interval: 60s
-    conditions:
-      - "[CONNECTED] == true"
-  - name: Jump Box 1-4
-    group: core
-    url: "tcp://10.200.1.35:5904"
-    interval: 60s
-    conditions:
-      - "[CONNECTED] == true"
-  - name: Jump Box 1-5
-    group: core
-    url: "tcp://10.200.1.35:5905"
-    interval: 60s
-    conditions:
-      - "[CONNECTED] == true"
-  - name: Jump Box 1-6
-    group: core
-    url: "tcp://10.200.1.35:5906"
+    url: "tcp://10.200.1.19:22000"
     interval: 60s
     conditions:
       - "[CONNECTED] == true"
 
-  - name: Jump Box 2
-    group: core
-    url: "icmp://10.200.1.36"
-    interval: 60s
-    conditions:
-      - "[CONNECTED] == true"
 
-  - name: Jump Box 3
-    group: core
-    url: "icmp://10.200.1.37"
-    interval: 60s
-    conditions:
-      - "[CONNECTED] == true"
-
+##########################################
+### Challenges
+##########################################
   - name: Tryouts c01
     group: challs
     url: "icmp://10.200.1.101"
@@ -229,28 +192,57 @@ endpoints:
     conditions:
       - "[STATUS] == 200"
 
-
+##########################################
+### Capstones
+##########################################
   - name: Dev Workstation
     group: Capstone
     url: "tcp://10.200.1.12:5900"
     interval: 60s
     conditions:
       - "[CONNECTED] == true"
-
-  - name: Clickhouse DB
+  - name: Clickhouse DB WebUI
     group: Capstone
     url: "http://10.200.1.13:8123"
     interval: 60s
     conditions:
       - "[STATUS] == 200"
-
-  - name: GitLab Server
+  - name: Clickhouse DB MySQL
+    group: Capstone
+    url: "tcp://10.200.1.13:3306"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+  - name: Clickhouse DB SSH
+    group: Capstone
+    url: "tcp://10.200.1.13:22"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+  - name: Clickhouse DB Clickhouse Server
+    group: Capstone
+    url: "tcp://10.200.1.13:9000"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+  - name: Clickhouse DB Clickhouse Replication
+    group: Capstone
+    url: "tcp://10.200.1.13:9009"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+  - name: GitLab Server Webpage
     group: Capstone
     url: "http://10.200.1.14:80"
     interval: 60s
     conditions:
       - "[STATUS] == 200"
-
+  - name: GitLab Server SSH
+    group: Capstone
+    url: "tcp://10.200.1.13:22"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
   - name: Shadow's Edge
     group: Capstone
     url: "icmp://10.200.1.107"
@@ -258,23 +250,169 @@ endpoints:
     conditions:
       - "[CONNECTED] == true"
 
+##########################################
+### CCDC
+##########################################
   - name: HTTP
     group: CCDC
     url: "http://10.200.1.30:80"
     interval: 60s
     conditions:
       - "[STATUS] == 200"
-
   - name: SMTP
     group: CCDC
     url: "tcp://10.200.1.30:25"
     interval: 60s
     conditions:
       - "[CONNECTED] == true"
-
   - name: DNS
     group: CCDC
     url: "udp://10.200.1.30:53"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+  - name: SSH
+    group: CCDC
+    url: "tcp://10.200.1.30:22"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+  - name: Git
+    group: CCDC
+    url: "tcp://10.200.1.30:3000"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+
+##########################################
+### JUMP BOXES
+##########################################
+### J1
+  - name: Jump Box 1 SSH
+    group: core
+    url: "tcp://10.200.1.35:22"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+  - name: Jump Box 1-1
+    group: core
+    url: "tcp://10.200.1.35:5901"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+  - name: Jump Box 1-2
+    group: core
+    url: "tcp://10.200.1.35:5902"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+  - name: Jump Box 1-3
+    group: core
+    url: "tcp://10.200.1.35:5903"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+  - name: Jump Box 1-4
+    group: core
+    url: "tcp://10.200.1.35:5904"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+  - name: Jump Box 1-5
+    group: core
+    url: "tcp://10.200.1.35:5905"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+  - name: Jump Box 1-6
+    group: core
+    url: "tcp://10.200.1.35:5906"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+### J2
+  - name: Jump Box 2 SSH
+    group: core
+    url: "tcp://10.200.1.36:22"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+  - name: Jump Box 2-1
+    group: core
+    url: "tcp://10.200.1.36:5901"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+  - name: Jump Box 2-2
+    group: core
+    url: "tcp://10.200.1.36:5902"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+  - name: Jump Box 2-3
+    group: core
+    url: "tcp://10.200.1.36:5903"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+  - name: Jump Box 2-4
+    group: core
+    url: "tcp://10.200.1.36:5904"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+  - name: Jump Box 2-5
+    group: core
+    url: "tcp://10.200.1.36:5905"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+  - name: Jump Box 2-6
+    group: core
+    url: "tcp://10.200.1.36:5906"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+### J3
+  - name: Jump Box 3 SSH
+    group: core
+    url: "tcp://10.200.1.37:22"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+  - name: Jump Box 3-1
+    group: core
+    url: "tcp://10.200.1.37:5901"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+  - name: Jump Box 3-2
+    group: core
+    url: "tcp://10.200.1.37:5902"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+  - name: Jump Box 3-3
+    group: core
+    url: "tcp://10.200.1.37:5903"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+  - name: Jump Box 3-4
+    group: core
+    url: "tcp://10.200.1.37:5904"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+  - name: Jump Box 3-5
+    group: core
+    url: "tcp://10.200.1.37:5905"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+  - name: Jump Box 3-6
+    group: core
+    url: "tcp://10.200.1.37:5906"
     interval: 60s
     conditions:
       - "[CONNECTED] == true"
