@@ -11,35 +11,19 @@
         ping: 10.200.1.3
         widgets:
             - type: customapi
-              url: http://10.200.1.3:3002/api/v1/endpoints/statuses
+              url: http://172.18.0.1:5000/status
+              refreshInterval: 10000
               mappings:
-                - field: "$[0]"
-                #- field: "$[?(@.key=='core_uptime-server---homepage')]"
-                #- field: 59
-                #- field: "59.results.0.success"
+                - field: "core_uptime-server---homepage.online"
                   label: "Homepage (:3000)"
-                  format: bytes
-                #  remap:
-                #    - value: true
-                #      to: Online
-                #    - value: false
-                #      to: Offline
-                - field: "58.results.49.success"
+                  format: text
+                - field: "core_uptime-server---kuma.online"
                   label: "Uptime Kuma (:3001)"
-                  format: bytes
-                  remap:
-                    - value: true
-                      to: Online
-                    - value: false
-                      to: Offline
-                - field: "56.results.49.success"
+                  format: text
+                - field: "core_uptime-server---gatus.online"
                   label: "Gatus (:3002)"
-                  format: bytes
-                  remap:
-                    - value: true
-                      to: Online
-                    - value: false
-                      to: Offline
+                  format: text
+
     - ESXI Server:
         icon: vmware
         description: "10.200.1.10"
@@ -47,16 +31,18 @@
         ping: 10.200.1.10
         widgets:
             - type: customapi
-              url: http://10.200.1.3:3002/api/v1/endpoints/statuses
+              url: http://172.18.0.1:5000/status
               mappings:
-                - field: "29.results.49.success"
+                - field: "core_esxi-server.online"
                   label: "Webpage (:443)"
-                  format: bytes
-                  remap:
-                    - value: true
-                      to: Online
-                    - value: false
-                      to: Offline
+                  format: text
+                  #state_map:
+                  #  - value: "Online"
+                  #    state: "success"  # Turns text Green
+                  #  - value: "Offline"
+                  #    state: "danger"   # Turns text Red
+                  #  - value: "Unknown"
+                  #    state: "warning"  # Turns text Yellow
 
     - TrueNas:
         icon: truenas
