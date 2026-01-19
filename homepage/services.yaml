@@ -86,10 +86,10 @@
             - type: customapi
               url: http://172.18.0.1:5000/status
               mappings:
-                - field: "core_emiles-file-server-ssh.online"
+                - field: "core_emile's-file-server-ssh.online"
                   label: "SSH (:22)"
                   format: text
-                - field: "core_emiles-file-server-syncthing.online"
+                - field: "core_emile's-file-server-syncthing.online"
                   label: "Syncthing (:22000)"
                   format: text
 
@@ -242,6 +242,9 @@
                 - field: "challs_tryouts-c07.online"
                   label: "http-c07 (:8087)"
                   format: text
+            - type: customapi
+              url: http://172.18.0.1:5000/status
+              mappings:
                 - field: "challs_tryouts-c08.online"
                   label: "http-c08 (:8088)"
                   format: text
