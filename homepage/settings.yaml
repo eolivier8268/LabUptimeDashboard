@@ -5,3 +5,28 @@
 providers:
   openweathermap: openweathermapapikey
   weatherapi: weatherapiapikey
+
+layout:
+  # COLUMN 1: The core services group
+  Network Stack & Hardware:
+    style: column
+    columns: 1
+    col: 1
+
+  # COLUMN 2: Challs and Labs
+  Challenges and Labs:
+    style: column
+    columns: 1
+    col: 2
+
+  # COLUMN 3: Capstone
+  Capstone:
+    style: column
+    columns: 1
+    col: 3
+
+  # COLUMN 4: Competition Schedule / Announcements
+  Competition Schedule:
+    style: column
+    columns: 1
+    col: 4

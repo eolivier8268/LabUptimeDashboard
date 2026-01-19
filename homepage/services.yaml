@@ -7,7 +7,7 @@
     - Uptime Server:
         icon: uptime-kuma
         description: "10.200.1.3"
-        href: https://10.200.1.3:3000/
+        href: http://10.200.1.3:3000/
         ping: 10.200.1.3
         widgets:
             - type: customapi
@@ -128,7 +128,7 @@
                 - field: "core_jump-box-1-6.online"
                   label: "User 6 (:5906)"
                   format: text
-    
+
     - Jump Box 2:
         icon: microsoft-remote-desktop
         description: "10.200.1.36"
@@ -275,6 +275,49 @@
                   label: "c17-nextjs (:80)"
                   format: text
 
+    - Practice Pod "Public IP":
+        icon: opnsense
+        description: 10.200.1.30
+        widgets:
+            - type: customapi
+              url: http://172.18.0.1:5000/status
+              mappings:
+                - field: "ccdc_ssh.online"
+                  label: "SSH (tcp/22)"
+                  format: text
+                - field: "ccdc_smtp.online"
+                  label: "SMTP (tcp/25)"
+                  format: text
+                - field: "ccdc_dns.online"
+                  label: "DNS (udp/53)"
+                  format: text
+            - type: customapi
+              url: http://172.18.0.1:5000/status
+              mappings:
+                - field: "ccdc_http.online"
+                  label: "HTTP (tcp/80)"
+                  format: text
+                - field: "ccdc_git.online"
+                  label: "Git (tcp/3000)"
+                  format: text
+
+    - PA Firewall :
+        icon: palo-alto
+        description: 10.200.1.21
+
+    - CCDC Red Team:
+        icon: kali-linux
+        description: 10.200.1.22
+        ping: 10.200.1.22
+        widgets:
+            - type: customapi
+              url: http://172.18.0.1:5000/status
+              mappings:
+                - field: "ccdc_redteam-ssh.online"
+                  label: "SSH (tcp/22)"
+                  format: text
+
+
 
 - Capstone:
     - Dev Workstation:
@@ -331,50 +374,37 @@
         ping: 10.200.1.107
 
 
-- CCDC:
-    - Practice Pod "Public IP":
-        icon: opnsense
-        description: 10.200.1.30
-        widgets:
-            - type: customapi
-              url: http://172.18.0.1:5000/status
-              mappings:
-                - field: "ccdc_ssh.online"
-                  label: "SSH (tcp/22)"
-                  format: text
-                - field: "ccdc_smtp.online"
-                  label: "SMTP (tcp/25)"
-                  format: text
-                - field: "ccdc_dns.online"
-                  label: "DNS (udp/53)"
-                  format: text
-            - type: customapi
-              url: http://172.18.0.1:5000/status
-              mappings:
-                - field: "ccdc_http.online"
-                  label: "HTTP (tcp/80)"
-                  format: text
-                - field: "cdcdc_git.online"
-                  label: "Git (tcp/3000)"
-                  format: text
-
-    - PA Firewall :
-        icon: palo-alto
-        description: 10.200.1.21
-
-    - CCDC Red Team:
-        icon: kali-linux
-        description: 10.200.1.22
-        ping: 10.200.1.22
-        widgets:
-            - type: customapi
-              url: http://172.18.0.1:5000/status
-              mappings:
-                - field: "ccdc_redteam-ssh.online"
-                  label: "SSH (tcp/22)"
-                  format: text
-                - field: "ccdc_redteam-listener.online"
-                  label: "msf (tcp/4444)"
-                  format: text
-
-
+- Competition Schedule:
+    - "6-13 Jan: PCUP Individuals Round 1":
+        description: Jaden, Neil, Emile, Nick, Ian, and Kaci Qualified for Round 2 in Offensive. Jaden, Emile, and Neil qualified for Round 2 in Defensive Track.
+        href: "#"          # Prevents navigation errors if clicked
+    - "10 Jan: Mountain West Cyber Challenge":
+        description: 1st place (Delogrand), 10th place (Delogrander)
+        href: "#"
+    - "20-27 Jan: PCUP Teams Round 1":
+        description:
+        href: "#"
+    - "24 Jan: CCDC Regional Qualifier":
+        description:
+        href: "#"
+    - "3-10 Feb: PCUP Individual Round 2":
+        description:
+        href: "#"
+    - "6-7 Feb: LACTF":
+        description:
+        href: "#"
+    - "17-24 Feb: PCUP Teams Round 2":
+        description:
+        href: "#"
+    - "3-4 Mar: 16AF CTF":
+        description:
+        href: "#"
+    - "6-7 Mar: CCDC Regionals":
+        description:
+        href: "#"
+    - "1-2 Apr: Service Academy Cup":
+        description:
+        href: "#"
+    - "8-10 Apr: NSA Cyber Exercise":
+        description:
+        href: "#"

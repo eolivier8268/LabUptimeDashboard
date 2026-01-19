@@ -10,3 +10,6 @@
 #- search:
 #    provider: duckduckgo
 #    target: _blank
+- greeting:
+    text_size: xl
+    text: "Delogrand Status & Uptime Dashboard"
