@@ -359,3 +359,20 @@
     - PA Firewall :
         icon: palo-alto
         description: 10.200.1.21
+
+    - CCDC Red Team:
+        icon: kali-linux
+        description: 10.200.1.22
+        ping: 10.200.1.22
+        widgets:
+            - type: customapi
+              url: http://172.18.0.1:5000/status
+              mappings:
+                - field: "ccdc_redteam-ssh.online"
+                  label: "SSH (tcp/22)"
+                  format: text
+                - field: "ccdc_redteam-listener.online"
+                  label: "msf (tcp/4444)"
+                  format: text
+
+

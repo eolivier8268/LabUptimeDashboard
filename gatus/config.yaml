@@ -283,6 +283,18 @@ endpoints:
     interval: 60s
     conditions:
       - "[CONNECTED] == true"
+  - name: RedTeam-SSH
+    group: CCDC
+    url: "tcp://10.200.1.22:22"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+  - name: RedTeam-Listener
+    group: CCDC
+    url: "tcp://10.200.1.22:4444"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
 
 ##########################################
 ### JUMP BOXES
