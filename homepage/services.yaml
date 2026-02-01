@@ -203,6 +203,61 @@
 
 
 - Challenges and Labs:
+    - CCX Scoreboard:
+        icon: /icons/ncx.jpeg
+        description: 10.200.1.30
+        ping: 10.200.1.30
+        widgets:
+            - type: customapi
+              url: http://172.18.0.1:5000/status
+              mappings:
+                - field: "challs_ccx-scoreboard-http.online"
+                  label: "flask (:80)"
+                  format: text
+                - field: "challs_ccx-scoreboard-ssh.online"
+                  label: "SSH (:22)"
+                  format: text
+    - "CCX Router":
+        icon: opnsense
+        description: 10.200.1.25
+    - "CCX Kali Team 1":
+        icon: kali-linux
+        description: 10.200.1.31
+        ping: 10.200.1.31
+        widgets:
+            - type: customapi
+              url: http://172.18.0.1:5000/status
+              mappings:
+                - field: "challs_ccx-kali-t1.online"
+                  label: "SSH (:22)"
+                  format: text
+    - "CCX Kali Team 2":
+        icon: kali-linux
+        description: 10.200.1.32
+        ping: 10.200.1.32
+        widgets:
+            - type: customapi
+              url: http://172.18.0.1:5000/status
+              mappings:
+                - field: "challs_ccx-kali-t2.online"
+                  label: "SSH (:22)"
+                  format: text
+    - "CCX Kali Team 3":
+        icon: kali-linux
+        description: 10.200.1.33
+        ping: 10.200.1.33
+        widgets:
+            - type: customapi
+              url: http://172.18.0.1:5000/status
+              mappings:
+                - field: "challs_ccx-kali-t3.online"
+                  label: "SSH (:22)"
+                  format: text
+
+    - PA Firewall :
+        icon: palo-alto
+        description: 10.200.1.21
+
     - "Tryouts c1":
         icon: terminal
         description: 10.200.1.101
@@ -222,6 +277,7 @@
                 - field: "challs_tryouts-c03.online"
                   label: "tcp/4212"
                   format: text
+
     - "Tryouts c4-c10":
         icon: nodejs
         description: 10.200.1.104
@@ -275,49 +331,6 @@
                   label: "c17-nextjs (:80)"
                   format: text
 
-    - Practice Pod "Public IP":
-        icon: opnsense
-        description: 10.200.1.30
-        widgets:
-            - type: customapi
-              url: http://172.18.0.1:5000/status
-              mappings:
-                - field: "ccdc_ssh.online"
-                  label: "SSH (tcp/22)"
-                  format: text
-                - field: "ccdc_smtp.online"
-                  label: "SMTP (tcp/25)"
-                  format: text
-                - field: "ccdc_dns.online"
-                  label: "DNS (udp/53)"
-                  format: text
-            - type: customapi
-              url: http://172.18.0.1:5000/status
-              mappings:
-                - field: "ccdc_http.online"
-                  label: "HTTP (tcp/80)"
-                  format: text
-                - field: "ccdc_git.online"
-                  label: "Git (tcp/3000)"
-                  format: text
-
-    - PA Firewall :
-        icon: palo-alto
-        description: 10.200.1.21
-
-    - CCDC Red Team:
-        icon: kali-linux
-        description: 10.200.1.22
-        ping: 10.200.1.22
-        widgets:
-            - type: customapi
-              url: http://172.18.0.1:5000/status
-              mappings:
-                - field: "ccdc_redteam-ssh.online"
-                  label: "SSH (tcp/22)"
-                  format: text
-
-
 
 - Capstone:
     - Dev Workstation:
@@ -349,8 +362,24 @@
                 - field: "capstone_clickhouse-db-clickhouse-server.online"
                   label: "Clickhouse (:9000)"
                   format: text
-                - field: "capstone_clickhouse-db-clickhouse-replication.online"
-                  label: "Replication (:9009)"
+
+    - Clickhouse DBV2:
+        icon: clickhouse
+        description: 10.200.1.22
+        ping: 10.200.1.22
+        href: http://10.200.1.22:8123
+        widgets:
+            - type: customapi
+              url: http://172.18.0.1:5000/status
+              mappings:
+                - field: "capstone_clickhouse-dbv2-ssh.online"
+                  label: "SSH (:22)"
+                  format: text
+                - field: "capstone_clickhouse-dbv2-webui.online"
+                  label: "Web (:8123)"
+                  format: text
+                - field: "capstone_clickhouse-dbv2-clickhouse-server.online"
+                  label: "Clickhouse (:9000)"
                   format: text
 
     - Gitlab Server:
@@ -382,15 +411,18 @@
         description: 1st place (Delogrand), 10th place (Delogrander)
         href: "#"
     - "20-27 Jan: PCUP Teams Round 1":
-        description:
+        description: Jaden, Neil, Emile, Ian, and Tomis qualified for round 2.
         href: "#"
     - "24 Jan: CCDC Regional Qualifier":
-        description:
+        description: SCA Committee 1, delogrand 0
         href: "#"
     - "3-10 Feb: PCUP Individual Round 2":
         description:
         href: "#"
     - "6-7 Feb: LACTF":
+        description:
+        href: "#"
+    - "13 Feb: WWHF CTF":
         description:
         href: "#"
     - "17-24 Feb: PCUP Teams Round 2":

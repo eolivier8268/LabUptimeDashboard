@@ -1,4 +1,3 @@
-
 endpoints:
 ##########################################
 ### General
@@ -192,6 +191,43 @@ endpoints:
     conditions:
       - "[STATUS] == 200"
 
+  - name: CCX Scoreboard HTTP
+    group: challs
+    url: "http://10.200.1.30:80"
+    interval: 60s
+    conditions:
+      - "[STATUS] == 200"
+  - name: CCX Scoreboard SSH
+    group: challs
+    url: "tcp://10.200.1.30:22"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+  - name: CCX Router
+    group: challs
+    url: "icmp://10.200.1.25"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+  - name: CCX Kali T1
+    group: challs
+    url: "tcp://10.200.1.31:22"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+  - name: CCX Kali T2
+    group: challs
+    url: "tcp://10.200.1.32:22"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+  - name: CCX Kali T3
+    group: challs
+    url: "tcp://10.200.1.33:22"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+
 ##########################################
 ### Capstones
 ##########################################
@@ -231,6 +267,24 @@ endpoints:
     interval: 60s
     conditions:
       - "[CONNECTED] == true"
+  - name: Clickhouse DBV2 SSH
+    group: Capstone
+    url: "tcp://10.200.1.22:22"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+  - name: Clickhouse DBV2 Clickhouse Server
+    group: Capstone
+    url: "tcp://10.200.1.22:9000"
+    interval: 60s
+    conditions:
+      - "[CONNECTED] == true"
+  - name: Clickhouse DBV2 WebUI
+    group: Capstone
+    url: "http://10.200.1.22:8123"
+    interval: 60s
+    conditions:
+      - "[STATUS] == 200"
   - name: GitLab Server Webpage
     group: Capstone
     url: "http://10.200.1.14:80"
