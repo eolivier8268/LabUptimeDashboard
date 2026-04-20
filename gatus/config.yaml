@@ -2,6 +2,20 @@ endpoints:
 ##########################################
 ### General
 ##########################################
+  # - name: template HTTP website
+  #   group: core
+  #   url: "http://x.x.x.x:xxxx"
+  #   interval: xxs
+  #   conditions:
+  #     - "[STATUS] == 200"
+
+  # - name: template open TCP port
+  #   group: core
+  #   url: "tcp://x.x.x.x:22"
+  #   interval: xxs
+  #   conditions:
+  #     - "[CONNECTED] == true"
+
   - name: Cisco Switch
     group: core
     url: "icmp://10.200.1.2"

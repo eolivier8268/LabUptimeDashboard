@@ -1,3 +1,38 @@
+# - group 1:
+#   - simple-host:
+#       # use a filename found in https://github.com/homarr-labs/dashboard-icons/tree/main
+#       # or use a custom icon by placing it in the public/icons directory and referencing it with /icons/filename.ext
+#       icon: 1337x
+#       # put the IP here or any other description you'd like to show on the card
+#       description: "x.x.x.x"
+#   - full-host:
+#       # use a filename found in https://github.com/homarr-labs/dashboard-icons/tree/main
+#       # or use a custom icon by placing it in the public/icons directory and referencing it with /icons/filename.ext
+#       icon: 1337x
+#       # put the IP here or any other description you'd like to show on the card
+#       description: "x.x.x.x"
+#       # this entry turns the tile into a clickable link to the specified URL
+#       href: http://x.x.x.x
+#       # this entry enables ping monitoring for the specified IP address, shown as a red/green in the top left corner
+#       ping: x.x.x.x
+#       # this entry adds your service checks by pointing to py-proxy. Don't change anything between here and mappings
+#       widgets:
+#           - type: customapi
+#             url: http://172.18.0.1:5000/status
+#             refreshInterval: 10000
+#             mappings:
+#               # this section maps the entry to the gatus field. Specify it as group_checkname.online
+#               # replace any spaces in the gatus name with hyphens. All lowercase.
+#               - field: "group_gatusname.online"
+#               # this is what you want displayed on the dashboard for this check.
+#               # I usually specify service name (:port)
+#                 label: "check name (:1337)"
+#               # leave format as text for a simple online/offline status.
+#                 format: text
+#               - field: "group_name-with-spaces.online"
+#                 label: "check name with spaces (:1234)"
+#                 format: text
+
 - Network Stack & Hardware:
     - Cisco Switch:
         icon: cisco
