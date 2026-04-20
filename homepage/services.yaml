@@ -90,6 +90,18 @@
                   label: "Syncthing (:22000)"
                   format: text
 
+    - devine:
+        icon: openai
+        description: "10.200.1.50"
+        ping: 10.200.1.50
+        widgets:
+            - type: customapi
+              url: http://172.18.0.1:5000/status
+              mappings:
+                - field: "core_devine.online"
+                  label: "HTTP (:3000)"
+                  format: text
+
     - Jump Box 1:
         icon: microsoft-remote-desktop
         description: "10.200.1.35"
@@ -279,7 +291,7 @@
                   label: "Flask CTF Hub (:5000)"
                   format: text
     - SoftDev Flask CTF Host 2:
-        icon: fpythonk
+        icon: python
         description: 10.200.1.42
         ping: 10.200.1.42
         href: http://10.200.1.42:5000
@@ -302,31 +314,6 @@
                 - field: "challs_flask-security-ctf-host-3.online"
                   label: "Flask CTF Hub (:5000)"
                   format: text
-    - SoftDev Flask CTF Host 4:
-        icon: python
-        description: 10.200.1.44
-        ping: 10.200.1.44
-        href: http://10.200.1.44:5000
-        widgets:
-            - type: customapi
-              url: http://172.18.0.1:5000/status
-              mappings:
-                - field: "challs_flask-security-ctf-host-4.online"
-                  label: "Flask CTF Hub (:5000)"
-                  format: text
-    - SoftDev Flask CTF Host 5:
-        icon: python
-        description: 10.200.1.45
-        ping: 10.200.1.45
-        href: http://10.200.1.45:5000
-        widgets:
-            - type: customapi
-              url: http://172.18.0.1:5000/status
-              mappings:
-                - field: "challs_flask-security-ctf-host-5.online"
-                  label: "Flask CTF Hub (:5000)"
-                  format: text
-
 
 
     - PA Firewall :
@@ -426,13 +413,13 @@
         description: "Jaden, Neil, and Ian qualified for Red Finals. Emile and Neil qualified for Blue Finals. e tan e epi tas."
         href: "#"
     - "17-24 Feb: PCUP Teams Round 2":
-        description:
-        href: "#"
+        description: "Delogrand qualified for Finals (5th place)"
+        href: ""
     - "3-4 Mar: 16AF CTF":
-        description:
+        description: "Drew and Sihu's team won!"
         href: "#"
     - "1-2 Apr: Service Academy Cup":
-        description:
+        description: "Delogrand - 1st Place in Academy cup; Delogrander 1st Place in Open Netwars"
         href: "#"
     - "8-10 Apr: NSA Cyber Exercise":
         description:

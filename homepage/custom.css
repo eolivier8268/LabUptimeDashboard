@@ -1,0 +1,27 @@
+body {
+  padding-top: 220px;
+}
+
+body::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 470px;
+  background-image: url('/icons/NCXSchedule.png');
+  background-size: 100% auto; 
+  background-position: top center;
+  background-repeat: no-repeat;
+  margin-bottom: 20px;
+}
+
+body::after {
+  content: "NCX Module Schedule (all times in EDT)";
+  display: block;
+  position: absolute;
+  top: 475px; /* Position it near the bottom of the banner */
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+  color: white;
+}
